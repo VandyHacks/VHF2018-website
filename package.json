@@ -10,8 +10,8 @@
     "nuxt": "^1.4.2",
     "vue-typeahead": "^2.3.2"
   },
-  "engines" : { 
-    "node" : ">=10.0.0" 
+  "engines": {
+    "node": ">=10.0.0"
   },
   "scripts": {
     "dev": "nuxt",

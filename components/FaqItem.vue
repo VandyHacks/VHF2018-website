@@ -10,6 +10,11 @@
   transition: all 0.3s ease-out;
   &:hover {
     transform: scale(1.05);
+
+    // Remove scaling and filtering if device doesn't support hover
+    @media (hover: none) {
+      transform: none;
+    }
   }
 }
 
@@ -83,7 +88,7 @@
   <div class="faq-item noselect">
     <div class="question" @click="open = !open">
       <div class="arrow-wrapper">
-        <img :class="arrowDirection" class="arrow" src="~assets/img/arrow.svg" >
+        <img :class="arrowDirection" class="arrow" src="~assets/img/arrow.svg">
       </div>
       <h4 class="title">{{ title }}</h4>
     </div>

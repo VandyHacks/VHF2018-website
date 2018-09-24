@@ -2,45 +2,45 @@
   <div class="sponsor-images">
     <div class="sponsor-row tier-1">
       <a href="https://www.microstrategy.com/us" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/microstrategy.svg" alt="MicroStrategy" >
+        <img src="~assets/img/sponsors/microstrategy.svg" alt="MicroStrategy">
       </a>
       <a href="https://fulcrum-gt.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/fulcrum.svg" alt="Fulcrum" >
+        <img src="~assets/img/sponsors/fulcrum.svg" alt="Fulcrum">
       </a>
     </div>
     <div class="sponsor-row tier-2">
       <a href="https://www.centene.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/centene.svg" alt="Centene Corporation" >
+        <img src="~assets/img/sponsors/centene.svg" alt="Centene Corporation">
       </a>
       <a href="https://www.tractorsupply.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/tsc.svg" alt="Tractor Supply Co." >
+        <img src="~assets/img/sponsors/tsc.svg" alt="Tractor Supply Co.">
       </a>
       <a href="http://www.forcexinc.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/l3-forcex.svg" alt="L3 ForceX" >
+        <img src="~assets/img/sponsors/l3-forcex.svg" alt="L3 ForceX">
       </a>
 
     </div>
     <div class="sponsor-row tier-2">
       <a href="https://www.bnymellon.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/bnymellon.svg" alt="BNY Mellon" >
+        <img src="~assets/img/sponsors/bnymellon.svg" alt="BNY Mellon">
       </a>
       <a href="https://www.redventures.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/redventures.svg" alt="RED Ventures" >
+        <img src="~assets/img/sponsors/redventures.svg" alt="RED Ventures">
       </a>
 
     </div>
     <div class="sponsor-row tier-3">
       <a href="https://careers.homedepot.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/homedepot.svg" alt="Home Depot" >
+        <img src="~assets/img/sponsors/homedepot.svg" alt="Home Depot">
       </a>
       <a href="https://campus.capitalone.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/capital-one.svg" alt="Capital One" >
+        <img src="~assets/img/sponsors/capital-one.svg" alt="Capital One">
       </a>
       <a href="https://www.dollargeneral.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/dollargeneral.svg" alt="Dollar General" >
+        <img src="~assets/img/sponsors/dollargeneral.svg" alt="Dollar General">
       </a>
       <a href="https://www.bosframework.com/" target="_blank" rel="noopener">
-        <img src="~assets/img/sponsors/bosframework.svg" alt="BOS Framework" >
+        <img src="~assets/img/sponsors/bosframework.svg" alt="BOS Framework">
       </a>
     </div>
   </div>
@@ -49,9 +49,13 @@
 
 <style lang="scss">
 @import "~assets/scss/variables.scss";
+
 .sponsor-row {
+  width: 100%;
   text-align: center;
+
   img {
+    width: 100%;
     padding: 10px;
     vertical-align: middle;
     @media (min-width: $break-m) {
@@ -60,13 +64,17 @@
     @media (min-width: $break-l) {
       padding: 20px;
     }
-    filter: brightness(85%);
   }
   img:hover {
     transform: scale(1.04);
-    filter: brightness(100%);
     transition: all 0.3s ease;
+
+    // Remove scaling and filtering if device doesn't support hover
+    @media (hover: none) {
+      transform: none;
+    }
   }
+
   &.tier-1 {
     img {
       width: 100%;

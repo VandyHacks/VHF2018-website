@@ -3,6 +3,11 @@
     <div class="top-background">
       <main class="landing-section page">
         <img class="logo" alt="VandyHacks V" src="~assets/img/vh-logo-date.svg">
+        <h2>Co-hosted by
+          <a href="https://fulcrum-gt.com">Fulcrum GT</a>
+          and
+          <a href="https://www.microstrategy.com/us">MicroStrategy</a>
+        </h2>
         <a ontouchstart="" class="apply-btn" href="https://apply.vandyhacks.org/login">Apply</a>
         <aside class="sponsor-prospectus">
           Interested in being a sponsor? <br> Check out our
@@ -102,9 +107,7 @@
       <h2 class="heading-text">SPONSORS</h2>
       <sponsors/>
     </section>
-    <div class="footer">
-      <sitefooter />
-    </div>
+    <sitefooter class="footer" />
     <mlhbadge />
   </div>
 </template>
@@ -168,33 +171,36 @@ body {
   height: 100vh;
   background: $background;
 
-  // display: grid;
-  // grid-template-areas: "landing" "welcome" "faq" "schedule" "sponsors" "footer";
-  // grid-template-rows: repeat(auto-fill, minmax(100vh, max-content)) auto;
-  // grid-template-columns: 1fr;
-  // grid-auto-flow: row;
-
-  display: flex;
-  flex-flow: column nowrap;
-  flex-basis: 100vh;
+  display: block;
 
   overflow: auto;
-  scroll-snap-type: y proximity; // Chrome
-  scroll-snap-type-y: proximity; // Firefox compat
+
+  -webkit-overflow-scrolling: touch;
+  // Skip all iOS devices
+  @supports not (-webkit-overflow-scrolling: touch) {
+    // Scroll snapping
+    scroll-snap-type: y proximity; // Chrome
+    scroll-snap-type-y: proximity; // Firefox compat
+  }
 }
 
 .page {
-  flex-grow: 1;
-  width: 100%;
   min-height: 100vh;
-  scroll-snap-coordinate: 0% 0%; // Firefox
-  scroll-snap-align: start; // Chrome
+  width: 100%;
+
+  -webkit-overflow-scrolling: touch;
+  // Skip all iOS devices
+  @supports not (-webkit-overflow-scrolling: touch) {
+    // Scroll snapping
+    scroll-snap-coordinate: 0% 0%; // Firefox
+    scroll-snap-align: start; // Chrome
+  }
+
   padding: 30px;
   overflow: visible;
 }
 
 .footer {
-  flex-shrink: 1;
   scroll-snap-coordinate: 100% 100%; //Firefox
   scroll-snap-align: end; // Chrome
 }
@@ -202,27 +208,33 @@ body {
 .landing-section {
   padding: 30px 18px;
   padding-top: 10vh;
+
   display: grid;
   grid-template-areas: "logo logo" "apply apply" "sponsor-us arrow";
   grid-template-columns: 35vw 55vw;
   grid-template-rows: 1fr auto auto;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  max-height: 100vh;
 
-  // @media screen and (max-width: $break-m) {
-  //   padding-top: 30%;
-  //   display: grid;
-  //   grid-auto-flow: row;
-  //   grid-template-rows: auto;
-  //   justify-content: center;
-  //   align-items: center;
+  @media (max-width: $break-xl) {
+    grid-template-areas: "logo logo" "hosts hosts" "apply apply" "sponsor-us arrow";
+    grid-template-rows: 1fr auto auto auto;
 
-  //   aside {
-  //     align-self: flex-end;
-  //   }
-  // }
+    h2 {
+      text-align: center;
+      grid-area: hosts;
+    }
+
+    @media (min-width: $break-l) {
+      h2 {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media (min-width: $break-l) {
+    height: 100vh;
+  }
 }
 
 .logo {
@@ -239,14 +251,22 @@ body {
   text-decoration: none;
   padding: 8px 40px;
   margin: 20px;
-  background: $accent;
+  background: $header-color;
   border-radius: 4px;
   justify-self: center;
   transition: all 0.2s ease-out;
+
   &:hover {
     transform: scale(1.05);
     filter: brightness(150%);
     filter: contrast(150%);
+
+    // Remove scaling and filtering if device doesn't support hover
+    @media (hover: none) {
+      // Must use hover: none because ff doesn't recognize hover at all
+      transform: none;
+      filter: none;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -301,16 +321,16 @@ body {
 
   display: inline-grid;
   flex: 1 0 auto;
-  padding: 30px 60px;
   grid:
     [row1-start] "header" auto [row1-end]
     [row2-start] "left" auto [row2-end]
     [row3-start] "right" auto [row2-end]
     / 1fr;
-  grid-gap: 30px;
+  grid-gap: 0;
 
   .heading-text {
-    padding-left: 0px;
+    padding-left: 30px;
+    margin-bottom: 30px;
   }
 
   & > img {
@@ -329,6 +349,13 @@ body {
       [row2-start] "left right" 1fr [row2-end]
       / 1fr 1fr;
     line-height: 1.5em;
+    grid-gap: 30px;
+
+    padding: 30px 60px;
+    .heading-text {
+      margin-bottom: 0;
+      padding-left: 0px;
+    }
   }
 }
 
@@ -346,12 +373,18 @@ body {
 }
 
 .sponsors {
+  min-height: calc(100vh - 60px);
+  justify-content: flex-start;
+
   scroll-snap-coordinate: 0% 0%;
   background: $background url(~assets/img/sponsors-background.svg) no-repeat;
   background-position: center center;
   background-size: cover;
 
-  align-self: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 30px;
 }
 
 .top-background {
