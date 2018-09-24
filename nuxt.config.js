@@ -20,7 +20,7 @@ module.exports = {
         content: "https://vandyhacks.org/vh-preview.png"
       },
       { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" }
+      { property: "og:image:height", content: "604" }
     ],
     link: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
