@@ -113,11 +113,11 @@
 </template>
 
 <script>
-import MlhBadge from "~/components/MlhBadge.vue";
-import Schedule from "~/components/Schedule.vue";
-import FaqItem from "~/components/FaqItem.vue";
-import Footer from "~/components/Footer.vue";
-import Sponsors from "~/components/Sponsors.vue";
+import MlhBadge from "~/components/MlhBadge.vue"
+import Schedule from "~/components/Schedule.vue"
+import FaqItem from "~/components/FaqItem.vue"
+import Footer from "~/components/Footer.vue"
+import Sponsors from "~/components/Sponsors.vue"
 
 export default {
   components: {
@@ -127,7 +127,7 @@ export default {
     sitefooter: Footer,
     sponsors: Sponsors
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -326,10 +326,11 @@ body {
     [row2-start] "left" auto [row2-end]
     [row3-start] "right" auto [row2-end]
     / 1fr;
-  grid-gap: 30px;
+  grid-gap: 0;
 
   .heading-text {
     padding-left: 30px;
+    margin-bottom: 30px;
   }
 
   & > img {
@@ -348,9 +349,11 @@ body {
       [row2-start] "left right" 1fr [row2-end]
       / 1fr 1fr;
     line-height: 1.5em;
+    grid-gap: 30px;
 
     padding: 30px 60px;
     .heading-text {
+      margin-bottom: 0;
       padding-left: 0px;
     }
   }
