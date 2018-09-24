@@ -13,8 +13,8 @@ module.exports = {
         content:
           "The official website for VandyHacks V, Tennessee's premiere hackathon."
       },
-      { name: "theme-color", content: "#222a53" },
-      { "written-by": "Yunyu Lin" },
+      { name: "theme-color", content: "#07889b" },
+      { "written-by": "Matt Leon" },
       {
         property: "og:image",
         content: "https://vandyhacks.org/vh-preview.png"
@@ -44,16 +44,16 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend(config, ctx) {
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    // extend(config, ctx) {
+    //   if (ctx.isClient) {
+    //     config.module.rules.push({
+    //       enforce: "pre",
+    //       test: /\.(js|vue)$/,
+    //       loader: "eslint-loader",
+    //       exclude: /(node_modules)/
+    //     })
+    //   }
+    // }
   },
   css: ["flexboxgrid/dist/flexboxgrid.css"]
 }

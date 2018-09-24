@@ -102,19 +102,17 @@
       <h2 class="heading-text">SPONSORS</h2>
       <sponsors/>
     </section>
-    <div class="footer">
-      <sitefooter />
-    </div>
+    <sitefooter class="footer" />
     <mlhbadge />
   </div>
 </template>
 
 <script>
-import MlhBadge from "~/components/MlhBadge.vue"
-import Schedule from "~/components/Schedule.vue"
-import FaqItem from "~/components/FaqItem.vue"
-import Footer from "~/components/Footer.vue"
-import Sponsors from "~/components/Sponsors.vue"
+import MlhBadge from "~/components/MlhBadge.vue";
+import Schedule from "~/components/Schedule.vue";
+import FaqItem from "~/components/FaqItem.vue";
+import Footer from "~/components/Footer.vue";
+import Sponsors from "~/components/Sponsors.vue";
 
 export default {
   components: {
@@ -124,7 +122,7 @@ export default {
     sitefooter: Footer,
     sponsors: Sponsors
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -168,61 +166,49 @@ body {
   height: 100vh;
   background: $background;
 
-  // display: grid;
-  // grid-template-areas: "landing" "welcome" "faq" "schedule" "sponsors" "footer";
-  // grid-template-rows: repeat(auto-fill, minmax(100vh, max-content)) auto;
-  // grid-template-columns: 1fr;
-  // grid-auto-flow: row;
-
-  display: flex;
-  flex-flow: column nowrap;
-  flex-basis: 100vh;
+  display: block;
 
   overflow: auto;
-  scroll-snap-type: y proximity; // Chrome
-  scroll-snap-type-y: proximity; // Firefox compat
+
+  // Skip all iOS devices
+  @supports not (-webkit-overflow-scrolling: touch) {
+    // Scroll snapping
+    scroll-snap-type: y proximity; // Chrome
+    scroll-snap-type-y: proximity; // Firefox compat
+  }
 }
 
 .page {
-  flex-grow: 1;
-  width: 100%;
   min-height: 100vh;
-  scroll-snap-coordinate: 0% 0%; // Firefox
-  scroll-snap-align: start; // Chrome
+  width: 100%;
+
+  // Skip all iOS devices
+  @supports not (-webkit-overflow-scrolling: touch) {
+    // Scroll snapping
+    scroll-snap-coordinate: 0% 0%; // Firefox
+    scroll-snap-align: start; // Chrome
+  }
+
   padding: 30px;
   overflow: visible;
 }
 
 .footer {
-  flex-shrink: 1;
   scroll-snap-coordinate: 100% 100%; //Firefox
   scroll-snap-align: end; // Chrome
 }
 
 .landing-section {
+  min-height: 100vh;
   padding: 30px 18px;
   padding-top: 10vh;
+
   display: grid;
   grid-template-areas: "logo logo" "apply apply" "sponsor-us arrow";
   grid-template-columns: 35vw 55vw;
   grid-template-rows: 1fr auto auto;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  max-height: 100vh;
-
-  // @media screen and (max-width: $break-m) {
-  //   padding-top: 30%;
-  //   display: grid;
-  //   grid-auto-flow: row;
-  //   grid-template-rows: auto;
-  //   justify-content: center;
-  //   align-items: center;
-
-  //   aside {
-  //     align-self: flex-end;
-  //   }
-  // }
 }
 
 .logo {
@@ -243,10 +229,18 @@ body {
   border-radius: 4px;
   justify-self: center;
   transition: all 0.2s ease-out;
+
   &:hover {
     transform: scale(1.05);
     filter: brightness(150%);
     filter: contrast(150%);
+
+    // Remove scaling and filtering if device doesn't support hover
+    @media (hover: none) {
+      // Must use hover: none because ff doesn't recognize hover at all
+      transform: none;
+      filter: none;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -301,7 +295,6 @@ body {
 
   display: inline-grid;
   flex: 1 0 auto;
-  padding: 30px 60px;
   grid:
     [row1-start] "header" auto [row1-end]
     [row2-start] "left" auto [row2-end]
@@ -310,7 +303,7 @@ body {
   grid-gap: 30px;
 
   .heading-text {
-    padding-left: 0px;
+    padding-left: 30px;
   }
 
   & > img {
@@ -329,6 +322,11 @@ body {
       [row2-start] "left right" 1fr [row2-end]
       / 1fr 1fr;
     line-height: 1.5em;
+
+    padding: 30px 60px;
+    .heading-text {
+      padding-left: 0px;
+    }
   }
 }
 
@@ -346,12 +344,18 @@ body {
 }
 
 .sponsors {
+  min-height: calc(100vh - 60px);
+  justify-content: flex-start;
+
   scroll-snap-coordinate: 0% 0%;
   background: $background url(~assets/img/sponsors-background.svg) no-repeat;
   background-position: center center;
   background-size: cover;
 
-  align-self: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 30px;
 }
 
 .top-background {
