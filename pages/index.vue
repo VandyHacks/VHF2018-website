@@ -3,6 +3,11 @@
     <div class="top-background">
       <main class="landing-section page">
         <img class="logo" alt="VandyHacks V" src="~assets/img/vh-logo-date.svg">
+        <h2>Co-hosted by
+          <a href="https://fulcrum-gt.com">Fulcrum GT</a>
+          and
+          <a href="https://www.microstrategy.com/us">MicroStrategy</a>
+        </h2>
         <a ontouchstart="" class="apply-btn" href="https://apply.vandyhacks.org/login">Apply</a>
         <aside class="sponsor-prospectus">
           Interested in being a sponsor? <br> Check out our
@@ -170,6 +175,7 @@ body {
 
   overflow: auto;
 
+  -webkit-overflow-scrolling: touch;
   // Skip all iOS devices
   @supports not (-webkit-overflow-scrolling: touch) {
     // Scroll snapping
@@ -182,6 +188,7 @@ body {
   min-height: 100vh;
   width: 100%;
 
+  -webkit-overflow-scrolling: touch;
   // Skip all iOS devices
   @supports not (-webkit-overflow-scrolling: touch) {
     // Scroll snapping
@@ -199,7 +206,6 @@ body {
 }
 
 .landing-section {
-  min-height: 100vh;
   padding: 30px 18px;
   padding-top: 10vh;
 
@@ -209,6 +215,26 @@ body {
   grid-template-rows: 1fr auto auto;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: $break-xl) {
+    grid-template-areas: "logo logo" "hosts hosts" "apply apply" "sponsor-us arrow";
+    grid-template-rows: 1fr auto auto auto;
+
+    h2 {
+      text-align: center;
+      grid-area: hosts;
+    }
+
+    @media (min-width: $break-l) {
+      h2 {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media (min-width: $break-l) {
+    height: 100vh;
+  }
 }
 
 .logo {
@@ -225,7 +251,7 @@ body {
   text-decoration: none;
   padding: 8px 40px;
   margin: 20px;
-  background: $accent;
+  background: $header-color;
   border-radius: 4px;
   justify-self: center;
   transition: all 0.2s ease-out;
