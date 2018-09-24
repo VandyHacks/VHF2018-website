@@ -52,7 +52,7 @@
           Teams are limited to four people. If you're applying with a team, we will review all of your team members' applications to determine admission. We will also have a pitch session where attendees can share their ideas and find potential teammates. However, teams are not required, so feel free to work individually.
         </faqitem>
         <faqitem title="Will there be other activities besides hacking?">
-          Of course! This year, we've has planned a bunch of fun events for attendees to relax. Stay tuned for more info!
+          Of course! This year, we've planned a bunch of fun events for attendees to relax. Stay tuned for more info!
         </faqitem>
         <faqitem title="Do I need to stay the entire time?">
           Vanderbilt students are free to enter and leave the venue at all times. Students from other schools are asked to remain inside the venue throughout the entire event.
@@ -81,7 +81,7 @@
         <faqitem title="How do I get there?">
           Cars, buses, or flights, depending on location! We'll be sending buses to specific schools with large numbers of applicants.
         </faqitem>
-        <faqitem title="Will travel reimbursements be provided??">
+        <faqitem title="Will travel reimbursements be provided?">
           Travel reimbursements outside of the bus routes are tentative and will be awarded on a rolling basis.
         </faqitem>
         <faqitem title="How do I get there if I'm not near a bus stop?">
