@@ -42,6 +42,9 @@
       <a href="https://www.bosframework.com/" target="_blank" rel="noopener">
         <img src="~assets/img/sponsors/bosframework.svg" alt="BOS Framework">
       </a>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noopener">
+        <img src="~assets/img/sponsors/eventbrite.svg" alt="Eventbrite">
+      </a>
     </div>
   </div>
 </template>
