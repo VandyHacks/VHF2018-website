@@ -45,6 +45,9 @@
       <a href="https://www.eventbrite.com/" target="_blank" rel="noopener">
         <img src="~assets/img/sponsors/eventbrite.svg" alt="Eventbrite">
       </a>
+      <a href="https://commons.vanderbilt.edu/" target="_blank" rel="noopener">
+        <img src="~assets/img/sponsors/ingramcommons.svg" alt="The Martha Rivers Ingram Commons">
+      </a>
     </div>
   </div>
 </template>
