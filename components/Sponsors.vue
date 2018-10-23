@@ -48,6 +48,12 @@
       <a href="https://commons.vanderbilt.edu/" target="_blank" rel="noopener">
         <img src="~assets/img/sponsors/ingramcommons.svg" alt="The Martha Rivers Ingram Commons">
       </a>
+      <a href="https://www.microsoft.com/" target="_blank" rel="noopener">
+        <img src="~assets/img/sponsors/microsoft.svg" alt="Google">
+      </a>
+      <a href="https://www.google.com/" target="_blank" rel="noopener">
+        <img src="~assets/img/sponsors/google.svg" alt="Microsoft">
+      </a>
     </div>
   </div>
 </template>
