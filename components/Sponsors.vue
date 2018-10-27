@@ -76,10 +76,10 @@
     @media (min-width: $break-l) {
       padding: 20px;
     }
+    transition: all 0.3s ease;
   }
   img:hover {
     transform: scale(1.04);
-    transition: all 0.3s ease;
 
     // Remove scaling and filtering if device doesn't support hover
     @media (hover: none) {
