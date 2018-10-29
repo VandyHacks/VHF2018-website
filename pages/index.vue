@@ -2,7 +2,8 @@
   <div class="main">
     <div class="top-background">
       <main class="landing-section page">
-        <img class="logo" alt="VandyHacks V" src="~assets/img/vh-logo-date.svg">
+        <img class="logo" alt="VandyHacks V" src="~assets/img/horLogo.svg">
+        <CountdownTimer class='countdown' />
         <h2>Co-hosted by
           <a href="https://fulcrum-gt.com">Fulcrum GT</a>
           and
@@ -101,11 +102,11 @@
     </section>
     <section class="schedule page">
       <h2 class="heading-text">SCHEDULE</h2>
-      <schedule/>
+      <schedule />
     </section>
     <section class="sponsors page">
       <h2 class="heading-text">SPONSORS</h2>
-      <sponsors/>
+      <sponsors />
     </section>
     <sitefooter class="footer" />
     <mlhbadge />
@@ -113,11 +114,12 @@
 </template>
 
 <script>
-import MlhBadge from "~/components/MlhBadge.vue"
-import Schedule from "~/components/Schedule.vue"
-import FaqItem from "~/components/FaqItem.vue"
-import Footer from "~/components/Footer.vue"
-import Sponsors from "~/components/Sponsors.vue"
+import MlhBadge from "~/components/MlhBadge.vue";
+import Schedule from "~/components/Schedule.vue";
+import FaqItem from "~/components/FaqItem.vue";
+import Footer from "~/components/Footer.vue";
+import Sponsors from "~/components/Sponsors.vue";
+import CountdownTimer from "~/components/CountdownTimer.vue";
 
 export default {
   components: {
@@ -125,9 +127,10 @@ export default {
     schedule: Schedule,
     faqitem: FaqItem,
     sitefooter: Footer,
-    sponsors: Sponsors
+    sponsors: Sponsors,
+    CountdownTimer: CountdownTimer
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -135,6 +138,10 @@ export default {
 @font-face {
   font-family: SofiaProCondBold;
   src: url("/fonts/SofiaProCondMedium.woff");
+}
+@font-face {
+  font-family: SofiaProSemiBold;
+  src: url("/fonts/SofiaProSemiBold.woff");
 }
 @font-face {
   font-family: SofiaPro;
@@ -210,19 +217,26 @@ body {
   padding-top: 10vh;
 
   display: grid;
-  grid-template-areas: "logo logo" "apply apply" "sponsor-us arrow";
+  grid-template-areas: "logo logo" "countdown countdown" "apply apply" "sponsor-us arrow";
   grid-template-columns: 35vw 55vw;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 1fr 2fr auto auto;
   justify-content: center;
   align-items: center;
 
+  // Hosted by text
+  h2 {
+    font-family: SofiaProSemiBold;
+    font-size: 1.2em;
+  }
+
   @media (max-width: $break-xl) {
-    grid-template-areas: "logo logo" "hosts hosts" "apply apply" "sponsor-us arrow";
-    grid-template-rows: 1fr auto auto auto;
+    grid-template-areas: "logo logo" "countdown countdown" "apply apply" "hosts hosts" "sponsor-us arrow";
+    grid-template-rows: 1fr 1fr auto auto auto;
 
     h2 {
       text-align: center;
       grid-area: hosts;
+      font-size: 1.6em;
     }
 
     @media (min-width: $break-l) {
@@ -237,12 +251,21 @@ body {
   }
 }
 
+.countdown {
+  grid-area: countdown;
+}
+
 .logo {
   grid-area: logo;
   max-width: 95%;
   max-height: 95%;
   margin-bottom: 20px;
-  justify-self: center;
+  justify-self: flex-start;
+
+  @media (orientation: landscape) and (min-width: 1024px) {
+    width: 50%;
+    align-self: flex-start;
+  }
 }
 
 .apply-btn {
@@ -270,11 +293,12 @@ body {
   }
 
   @media screen and (max-width: 768px) {
-    padding: 16px 80px;
+    padding: 8px 20px;
     font-size: 1.6em;
   }
   @media screen and (max-width: 481px) {
-    padding: 16px 40px;
+    padding: 4px 20px;
+    font-size: 1.2em;
   }
 }
 
@@ -285,6 +309,7 @@ body {
   height: 104px;
   width: 48px;
   transform: rotate(90deg);
+  align-self: center;
 }
 
 .sponsor-prospectus {
