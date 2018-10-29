@@ -29,7 +29,7 @@
 export default {
   methods: {
     updateTime: function() {
-      const endDate = new Date("November 2, 2018 17:30:00");
+      const endDate = new Date("November 2, 2018 21:00:00");
       const now = new Date();
       const diff = endDate !== now ? endDate.getTime() - now.getTime() : 0;
 
