@@ -9,7 +9,7 @@
           and
           <a href="https://www.microstrategy.com/us">MicroStrategy</a>
         </h2>
-        <a ontouchstart="" class="apply-btn" href="https://apply.vandyhacks.org/login">Apply</a>
+        <a ontouchstart="" class="apply-btn">Apply</a>
         <aside class="sponsor-prospectus">
           Interested in being a sponsor? <br> Check out our
           <a href="https://apply.vandyhacks.org/sponsorship">sponsorship prospectus</a>!
@@ -278,7 +278,7 @@ body {
   border-radius: 4px;
   justify-self: center;
   transition: all 0.2s ease-out;
-
+  /*
   &:hover {
     transform: scale(1.05);
     filter: brightness(150%);
@@ -290,7 +290,8 @@ body {
       transform: none;
       filter: none;
     }
-  }
+  }*/
+  opacity: 0;  /* close applications */
 
   @media screen and (max-width: 768px) {
     padding: 8px 20px;
