@@ -9,7 +9,7 @@
           and
           <a href="https://www.microstrategy.com/us">MicroStrategy</a>
         </h2>
-        <a ontouchstart="" class="apply-btn">Apply</a>
+        <a ontouchstart="" class="apply-btn">Applications Closed.</a>
         <aside class="sponsor-prospectus">
           Interested in being a sponsor? <br> Check out our
           <a href="https://apply.vandyhacks.org/sponsorship">sponsorship prospectus</a>!
@@ -69,7 +69,7 @@
           Anyone who is 18 years or older (we will be checking ID) and is currently enrolled in college or university with a valid student ID. International students are invited to apply and attend, but we cannot guarantee full travel reimbursement.
         </faqitem>
         <faqitem title="How does registration work?">
-          Applications are now open! Acceptance is determined by a variety of factors, and applications will be reviewed by our board on a rolling basis. Once you’re accepted, you’ll receive an email from the VandyHacks team. If you're curious, email us for more info at
+          Applications have now closed. Acceptance is determined by a variety of factors, and applications will be reviewed by our board on a rolling basis. Once you’re accepted, you’ll receive an email from the VandyHacks team. If you're curious, email us for more info at
           <a href="mailto:info@vandyhacks.org">info@vandyhacks.org</a>
         </faqitem>
         <faqitem title="What if I'm a Vanderbilt student?">
@@ -278,7 +278,10 @@ body {
   border-radius: 4px;
   justify-self: center;
   transition: all 0.2s ease-out;
-  /*
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
   &:hover {
     transform: scale(1.05);
     filter: brightness(150%);
@@ -290,8 +293,7 @@ body {
       transform: none;
       filter: none;
     }
-  }*/
-  opacity: 0;  /* close applications */
+  }
 
   @media screen and (max-width: 768px) {
     padding: 8px 20px;
