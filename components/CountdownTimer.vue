@@ -86,6 +86,9 @@ export default {
   border-radius: 16px;
   display: flex;
   flex-flow: column nowrap;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 .timer {
   justify-self: center;
