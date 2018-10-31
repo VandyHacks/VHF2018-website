@@ -179,19 +179,19 @@ html {
       </div>
       <div class="event">
         <div class="event-name">hacking ends</div>
-        <div class="event-time">10:00a</div>
+        <div class="event-time">9:00a</div>
       </div>
       <div class="event">
         <div class="event-name">how to demo talk</div>
         <div class="event-time">10:00a</div>
       </div>
       <div class="event">
-        <div class="event-name">lunch</div>
-        <div class="event-time">11:00a</div>
+        <div class="event-name">project expo</div>
+        <div class="event-time">10:00a</div>
       </div>
       <div class="event">
-        <div class="event-name">project expo</div>
-        <div class="event-time">11:30a</div>
+        <div class="event-name">lunch</div>
+        <div class="event-time">12:00p</div>
       </div>
       <div class="event">
         <div class="event-name">closing ceremony</div>
@@ -199,7 +199,7 @@ html {
       </div>
       <div class="event">
         <div class="event-name">buses depart</div>
-        <div class="event-time">3:30p</div>
+        <div class="event-time">3:00p</div>
       </div>
     </div>
   </div>
