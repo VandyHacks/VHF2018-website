@@ -31,7 +31,7 @@ export default {
     updateTime: function() {
       const endDate = new Date("November 2, 2018 21:00:00");
       const now = new Date();
-      const diff = endDate !== now ? endDate.getTime() - now.getTime() : 0;
+      const diff = endDate > now ? endDate.getTime() - now.getTime() : 0;
 
       let days = Math.floor(diff / (1000 * 24 * 60 ** 2));
       let hours = Math.floor((diff / (1000 * 60 ** 2)) % 24);
