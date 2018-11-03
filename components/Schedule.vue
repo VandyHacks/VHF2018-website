@@ -94,6 +94,10 @@ html {
 </style>
 
 <template>
+<p>
+Please go to <a href='https://calendar.vandyhacks.org' target="_blank">calendar.vandyhacks.org</a> or <a href='https://dayof.vandyhacks.org' target="_blank">dayof.vandyhacks.org</a>
+</p>
+<!--
   <div class="events-wrapper">
     <h3 id="first-date" class="date">Friday, Nov 2</h3>
     <div class="events">
@@ -203,4 +207,5 @@ html {
       </div>
     </div>
   </div>
+  -->
 </template>
