@@ -9,7 +9,7 @@
           and
           <a href="https://www.microstrategy.com/us">MicroStrategy</a>
         </h2>
-        <a ontouchstart="" class="apply-btn">Applications Closed.</a>
+        <a ontouchstart="" class="apply-btn" href='https://dayof.vandyhacks.org'>Dayof Page</a>
         <aside class="sponsor-prospectus">
           Interested in being a sponsor? <br> Check out our
           <a href="https://apply.vandyhacks.org/sponsorship">sponsorship prospectus</a>!
