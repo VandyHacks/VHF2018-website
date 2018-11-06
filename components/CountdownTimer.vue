@@ -20,7 +20,7 @@
       </span>
     </span>
     <div class="remaining">
-      Until Hacking Begins
+      Until Hacking Begins Again
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@
 export default {
   methods: {
     updateTime: function() {
-      const endDate = new Date("November 2, 2018 21:00:00");
+      const endDate = new Date("November 1, 2019 21:00:00");
       const now = new Date();
       const diff = endDate > now ? endDate.getTime() - now.getTime() : 0;
 
@@ -95,7 +95,7 @@ export default {
   align-self: center;
   display: flex;
   flex-flow: row nowrap;
-  width: 50%;
+  min-width: 50%;
 
   @media (orientation: portrait) and (max-width: 1024px) {
     width: 100%;
