@@ -95,6 +95,10 @@ body {
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
+
+  h2 {
+    font-size: 0.9em;
+  }
 }
 
 .hosts {
