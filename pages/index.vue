@@ -88,6 +88,7 @@ body {
 
 .landing-section {
   min-height: 100vh;
+  max-height: 100vh;
   padding: 40px;
 
   display: grid;
@@ -98,6 +99,20 @@ body {
 
   h2 {
     font-size: 0.9em;
+  }
+
+  @media (orientation: portrait) {
+    padding: 120px 10px 20px;
+    h2 {
+      font-size: 1.1em;
+    }
+    .logo {
+      content: url("~/assets/img/vh-logo-date.svg");
+      max-width: 95%;
+      justify-self: center;
+      align-self: flex-end;
+      margin: 0;
+    }
   }
 }
 
