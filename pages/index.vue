@@ -3,7 +3,7 @@
     <main class="landing-section page">
       <img class="logo" alt="VandyHacks V" src="~assets/img/horLogo.svg">
       <CountdownTimer class='countdown' />
-      <h2 class="hosts">VandyHacks V was Co-hosted by
+      <h2 class="hosts">VandyHacks V was co-hosted by
         <a href="https://fulcrum-gt.com">Fulcrum GT</a>
         and
         <a href="https://www.microstrategy.com/us">MicroStrategy</a>
