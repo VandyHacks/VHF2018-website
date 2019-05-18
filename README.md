@@ -1,5 +1,7 @@
 # VHF2018-website
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/VandyHacks/VHF2018-website.svg)](https://greenkeeper.io/)
+
 > The official VandyHacks website. For the hacker portal, see [pencil](https://github.com/VandyHacks/pencil).
 
 ## Build Setup
